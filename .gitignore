@@ -1,0 +1,309 @@
+# =============================================================================
+# MCP Project .gitignore
+# =============================================================================
+
+# Secrets and Sensitive Data
+# =============================================================================
+secrets/*.local
+secrets/*.production
+secrets/*.staging
+*.key
+*.pem
+*.p12
+*.pfx
+# Environment files - never commit actual secrets
+*.env
+*.env.*
+!.env.development.local.example
+!.env.production.local.example
+!.env.test.local.example
+
+
+# Database Data and Backups
+# =============================================================================
+
+# Pagila Database Files (large SQL files should not be committed)
+data/pagila/pagila-data.sql
+data/pagila/pagila-insert-data.sql
+data/pagila/*.backup
+data/pagila/*-jsonb.backup
+
+*.db
+*.sqlite
+*.sqlite3
+dump.sql
+backup.sql
+
+# Docker and Container Data
+# =============================================================================
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Logs and Runtime Files
+# =============================================================================
+*.log
+*.out
+*.err
+logs/
+tmp/
+temp/
+.tmp/
+
+# User Data and Uploads
+# =============================================================================
+data/files/*
+data/uploads/*
+!data/files/.gitkeep
+!data/uploads/.gitkeep
+
+# Operating System Files
+# =============================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+*.temp
+Desktop.ini
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# IDE and Editor Files
+# =============================================================================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Node.js (if any Node.js tools are added)
+# =============================================================================
+node_modules/
+pnpm-lock.yaml
+
+# Python (if any Python tools are added)
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Go (if any Go tools are added)
+# =============================================================================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Rust (if any Rust tools are added)
+# =============================================================================
+target/
+Cargo.lock
+
+# Backup Files
+# =============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*~
+
+# Temporary Files
+# =============================================================================
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# SSL Certificates
+# =============================================================================
+*.crt
+*.cert
+*.ca-bundle
+*.p7b
+*.p7s
+*.spc
+
+# MCP Server Specific
+# =============================================================================
+# Any custom MCP server builds
+servers/*/build/
+servers/*/dist/
+servers/*/target/
+
+# Docker Volumes (if using named volumes)
+# =============================================================================
+volumes/
+
+# Terraform (if infrastructure as code is added)
+# =============================================================================
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+terraform.tfvars.json
+
+# Kubernetes Secrets (if K8s deployment is added)
+# =============================================================================
+*-secret.yaml
+*-secrets.yaml
+secret-*.yaml
+secrets-*.yaml
+
+# =============================================================================
+# Keep these files for proper project structure
+# =============================================================================
+!.gitkeep
+!README.md
+!LICENSE
+!Makefile
+!docker-compose.yml
+!Dockerfile
+!*.example
+!*.template
+!*.sample 
+gateway/coverage
+
+# Environment files (SECURITY: Never commit actual environment files)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# Development server configuration (allow local customization)
+dev-servers.config.js
+
+# Service-specific environment files
+.env.gateway.local
+.env.linear.local
+.env.devtools.local
+.env.perplexity.local
+.env.database.local
+.env.monitoring.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# TypeScript build cache files
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets and certificates (SECURITY: Critical)
+# Note: secrets/ directory patterns are defined at the top of this file
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/
+.cache/
+
+# Package manager files
+.turbo
+.vercel
+apps/linear-mcp-server/src/schemas/linear.ts
+
+# Claude Integration Certificates
+*.crt
+*.key
+*.pem

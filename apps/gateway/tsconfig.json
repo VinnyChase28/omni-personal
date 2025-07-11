@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../linear-mcp-server"
+    },
+    {
+      "path": "../../packages/capabilities"
+    },
+    {
+      "path": "../../packages/schemas"
+    },
+    {
+      "path": "../../packages/utils"
+    },
+    {
+      "path": "../perplexity-mcp-server"
+    },
+    {
+      "path": "../devtools-mcp-server"
+    }
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.test.ts"
+  ]
+}

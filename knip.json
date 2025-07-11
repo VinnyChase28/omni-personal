@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": ["scripts/scaffold-mcp-server.js"]
+    },
+    "packages/*": {},
+    "apps/*": {},
+    "packages/dev-tools": {
+      "entry": ["src/index.ts", "src/cli/index.ts"]
+    },
+    "packages/eslint-config": {
+      "ignoreDependencies": ["eslint-config-next"]
+    },
+    "packages/mcp-client-bridge": {
+      "ignoreDependencies": ["mcp-remote"]
+    }
+  },
+  "ignore": ["**/dist/**", "**/node_modules/**", "**/*.d.ts", "dev-servers.config.js.example"]
+}
